@@ -1,6 +1,9 @@
-import { Component, h, Host } from '@stencil/core';
+import { Component, h, Host, Prop } from '@stencil/core';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+import { MapConfig } from './Helper/mapConfig';
+import AddLayers from './Helper/mapLayer';
+
 
 @Component({
   tag: 'siye-viewer',
@@ -10,25 +13,40 @@ import 'leaflet/dist/leaflet.css';
 export class SiyeViewer {
   private mapContainer: HTMLElement;
 
+  @Prop() mapConfig: MapConfig = MapConfig.GetDefault();
+
+  private map: L.Map;
+
+  constructor() {
+    console.log('Component is being constructed');
+  }
+
   componentDidLoad() {
-    console.log('Component has been rendered');
+    console.log('Component has been rendered', this.mapConfig);
     if (this.mapContainer) {
-      const map = L.map(this.mapContainer, {
-        center: [13.1,80.2],
-        zoom: 10
+      this.map = L.map(this.mapContainer, {
+        center: this.mapConfig.center,
+        zoom: this.mapConfig.zoom,
+        maxzoom: this.mapConfig.maxZoom
       });
 
-      const mapLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>';
-      L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; ' + mapLink + ' Contributors',
-        maxZoom: 18,
-      }).addTo(map);
+      AddLayers(this.map, () => {console.log('Layer changed - may use for refresh map' )});
 
       setTimeout(() => {
-        map.invalidateSize();
+        this.map.invalidateSize();
       }, 0);
     } else {
       console.error('Map container is not defined');
+    }
+  }
+
+  public updateConfig(newConfig: MapConfig) {
+    console.log('Updating map config...', newConfig);
+    this.mapConfig = newConfig;
+
+    if (this.map) {
+      this.map.setView(this.mapConfig.center, this.mapConfig.zoom);
+      this.map.options.maxZoom = this.mapConfig.maxZoom;
     }
   }
 
