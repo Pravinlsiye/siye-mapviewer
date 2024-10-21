@@ -5,8 +5,11 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { MapConfig } from "./components/siye-viewer/Helper/mapConfig";
+export { MapConfig } from "./components/siye-viewer/Helper/mapConfig";
 export namespace Components {
     interface SiyeViewer {
+        "mapConfig": MapConfig;
     }
 }
 declare global {
@@ -22,6 +25,7 @@ declare global {
 }
 declare namespace LocalJSX {
     interface SiyeViewer {
+        "mapConfig"?: MapConfig;
     }
     interface IntrinsicElements {
         "siye-viewer": SiyeViewer;
