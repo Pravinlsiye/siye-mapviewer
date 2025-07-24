@@ -7,7 +7,7 @@ import AddLayers from './Helper/mapLayer';
 
 @Component({
   tag: 'siye-viewer',
-  styleUrl: '../../../node_modules/leaflet/dist/leaflet.css',
+  styleUrl: 'siye-viewer.css',
   shadow: true,
 })
 export class SiyeViewer {
@@ -27,7 +27,7 @@ export class SiyeViewer {
       this.map = L.map(this.mapContainer, {
         center: this.mapConfig.center,
         zoom: this.mapConfig.zoom,
-        maxzoom: this.mapConfig.maxZoom
+        maxZoom: this.mapConfig.maxZoom
       });
 
       AddLayers(this.map, () => {console.log('Layer changed - may use for refresh map' )});

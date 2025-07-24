@@ -8,15 +8,14 @@ export class MapProvider {
   }
 
   private initializeProviders() {
-    this.providers["HERE_satelliteDay"] = {
+    this.providers["ESRI_WorldImagery"] = {
       title: "satellite",
       icon: "./media/here_satelliteday.png",
       layer: L.tileLayer(
-        "https://{s}.aerial.maps.cit.api.here.com/maptile/2.1/maptile/newest/satellite.day/{z}/{x}/{y}/256/png8?app_id=Y8m9dK2brESDPGJPdrvs&app_code=dq2MYIvjAotR8tHvY8Q_Dg",
+        "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
         {
           attribution:
-            '&copy; <a href="http://www.openstreetmap.org/copyright">SatelliteDay</a>',
-          subdomains: "1234",
+            'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
           maxZoom: 20,
         }
       ),
@@ -36,38 +35,38 @@ export class MapProvider {
       title: "osm de",
       icon: "./media/openstreetmap_de.png",
       layer: L.tileLayer(
-        "https://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png",
+        "https://{s}.tile.openstreetmap.de/{z}/{x}/{y}.png",
         {
-          maxZoom: 20,
+          maxZoom: 18,
+          subdomains: "abc",
           attribution:
-            '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap_De</a>',
+            '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap DE</a>',
         }
       ),
     };
 
-    this.providers["HERE_normalDay"] = {
-      title: "normalday",
+    this.providers["OpenTopoMap"] = {
+      title: "topo map",
       icon: "./media/here_normalday.png",
       layer: L.tileLayer(
-        "https://{s}.base.maps.cit.api.here.com/maptile/2.1/maptile/newest/normal.day/{z}/{x}/{y}/256/png8?app_id=Y8m9dK2brESDPGJPdrvs&app_code=dq2MYIvjAotR8tHvY8Q_Dg",
+        "https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png",
         {
           attribution:
-            '&copy; <a href="http://www.openstreetmap.org/copyright">NormalDay</a>',
-          subdomains: "1234",
-          maxZoom: 20,
+            'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a>',
+          maxZoom: 17,
         }
       ),
     };
 
-    this.providers["HERE_normalDayGrey"] = {
-      title: "normalday grey",
+    this.providers["CartoDB_DarkMatter"] = {
+      title: "dark",
       icon: "./media/here_normaldaygrey.png",
       layer: L.tileLayer(
-        "https://{s}.base.maps.cit.api.here.com/maptile/2.1/maptile/newest/normal.day.grey/{z}/{x}/{y}/256/png8?app_id=Y8m9dK2brESDPGJPdrvs&app_code=dq2MYIvjAotR8tHvY8Q_Dg",
+        "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
         {
           attribution:
-            '&copy; <a href="http://www.openstreetmap.org/copyright">NormalDayGrey</a>',
-          subdomains: "1234",
+            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+          subdomains: "abcd",
           maxZoom: 20,
         }
       ),
@@ -77,18 +76,18 @@ export class MapProvider {
       title: "positron",
       icon: "./media/cartodb_positron.png",
       layer: L.tileLayer(
-        "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png",
+        "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
         {
           attribution:
-            '&copy; <a href="http://www.openstreetmap.org/copyright">CartoDB_Positron</a>',
+            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
           subdomains: "abcd",
           maxZoom: 20,
         }
       ),
     };
 
-    this.providers["here_AlidadeSatellite"] = {
-      title: "alidade satellite",
+    this.providers["Stadia_AlidadeSmooth"] = {
+      title: "alidade smooth",
       icon: "./media/alidade.png",
       layer: L.tileLayer(
         "https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png",
@@ -96,12 +95,12 @@ export class MapProvider {
           minZoom: 0,
           maxZoom: 20,
           attribution:
-            '&copy; <a href="http://www.openstreetmap.org/copyright">Aliade</a>',
+            '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
         }
       ),
     };
 
-    this.providers["Toner"] = {
+    this.providers["Stadia_StamenToner"] = {
       title: "toner",
       icon: "./media/toner.png",
       layer: L.tileLayer(
@@ -110,7 +109,7 @@ export class MapProvider {
           minZoom: 0,
           maxZoom: 20,
           attribution:
-            '&copy; <a href="http://www.openstreetmap.org/copyright">Aliade</a>',
+            '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://stamen.com/">Stamen Design</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
         }
       ),
     };

@@ -3,7 +3,7 @@ import { MapProvider } from "./mapLayerConfig";
 
 export default function AddLayers(map: any , callback: any) {
   const providers =  new MapProvider().getProviders();
-  providers["HERE_satelliteDay"].layer.addTo(map);
+  providers["ESRI_WorldImagery"].layer.addTo(map);
   const customLayerControl = L.control.layers(undefined, undefined, {
     position: "bottomleft",
   });
