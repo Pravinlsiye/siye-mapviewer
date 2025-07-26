@@ -10,7 +10,7 @@ export class MapProvider {
   private initializeProviders() {
     this.providers["ESRI_WorldImagery"] = {
       title: "satellite",
-      icon: "./media/here_satelliteday.png",
+      icon: "https://cdn-icons-png.flaticon.com/128/2642/2642502.png",
       layer: L.tileLayer(
         "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
         {
@@ -23,7 +23,7 @@ export class MapProvider {
 
     this.providers["OpenStreetMap_Mapnik"] = {
       title: "osm",
-      icon: "./media/openstreetmap_mapnik.png",
+      icon: "https://cdn-icons-png.flaticon.com/128/854/854878.png",
       layer: L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
         maxZoom: 20,
         attribution:
@@ -33,7 +33,7 @@ export class MapProvider {
 
     this.providers["OpenStreetMap_DE"] = {
       title: "osm de",
-      icon: "./media/openstreetmap_de.png",
+      icon: "https://cdn-icons-png.flaticon.com/128/684/684908.png",
       layer: L.tileLayer(
         "https://{s}.tile.openstreetmap.de/{z}/{x}/{y}.png",
         {
@@ -47,7 +47,7 @@ export class MapProvider {
 
     this.providers["OpenTopoMap"] = {
       title: "topo map",
-      icon: "./media/here_normalday.png",
+      icon: "https://cdn-icons-png.flaticon.com/128/7441/7441629.png",
       layer: L.tileLayer(
         "https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png",
         {
@@ -60,7 +60,7 @@ export class MapProvider {
 
     this.providers["CartoDB_DarkMatter"] = {
       title: "dark",
-      icon: "./media/here_normaldaygrey.png",
+      icon: "https://cdn-icons-png.flaticon.com/128/1076/1076928.png",
       layer: L.tileLayer(
         "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
         {
@@ -74,7 +74,7 @@ export class MapProvider {
 
     this.providers["CartoDB_Positron"] = {
       title: "positron",
-      icon: "./media/cartodb_positron.png",
+      icon: "https://cdn-icons-png.flaticon.com/128/1076/1076744.png",
       layer: L.tileLayer(
         "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
         {
@@ -88,7 +88,7 @@ export class MapProvider {
 
     this.providers["Stadia_AlidadeSmooth"] = {
       title: "alidade smooth",
-      icon: "./media/alidade.png",
+      icon: "https://cdn-icons-png.flaticon.com/128/4207/4207253.png",
       layer: L.tileLayer(
         "https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png",
         {
@@ -102,7 +102,7 @@ export class MapProvider {
 
     this.providers["Stadia_StamenToner"] = {
       title: "toner",
-      icon: "./media/toner.png",
+      icon: "https://cdn-icons-png.flaticon.com/128/2907/2907151.png",
       layer: L.tileLayer(
         "https://tiles.stadiamaps.com/tiles/stamen_toner/{z}/{x}/{y}{r}.png",
         {
