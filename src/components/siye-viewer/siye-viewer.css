@@ -36,3 +36,82 @@
     pointer-events: none;
     position: absolute;
   }
+
+.leaflet-compass-control {
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.4);
+}
+
+.leaflet-compass {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  padding: 3px;
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.leaflet-compass:hover {
+  background-color: #f4f4f4;
+  cursor: pointer;
+}
+
+.leaflet-compass svg {
+  vertical-align: middle;
+}
+
+/* Rotation control styles */
+.leaflet-control-rotate {
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.4);
+}
+
+.leaflet-control-rotate a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: #333;
+  width: 26px;
+  height: 26px;
+  line-height: 26px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.leaflet-control-rotate a:hover {
+  background-color: #f4f4f4;
+}
+
+/* Ensure controls are visible during rotation */
+.leaflet-control-container .leaflet-top.leaflet-left {
+  pointer-events: auto;
+}
+
+/* Rotation info control */
+.leaflet-rotation-info {
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.4);
+}
+
+.leaflet-rotation-info kbd {
+  display: inline-block;
+  padding: 2px 4px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #333;
+  vertical-align: middle;
+  background-color: #f7f7f7;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb;
+}
